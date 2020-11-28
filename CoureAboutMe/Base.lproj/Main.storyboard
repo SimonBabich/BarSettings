@@ -59,8 +59,7 @@
                                 <rect key="frame" x="8" y="814" width="348" height="31"/>
                                 <color key="thumbTintColor" systemColor="linkColor"/>
                                 <connections>
-                                    <action selector="slidwrFontCgange:" destination="BYZ-38-t0r" eventType="valueChanged" id="P8S-Pf-SgX"/>
-                                    <action selector="slidwrFontCgangeWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="qoF-bK-hna"/>
+                                    <action selector="sliderFontCgangeWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="a3g-YD-c3k"/>
                                 </connections>
                             </slider>
                         </subviews>
@@ -95,6 +94,7 @@
                         <outlet property="imageView" destination="sYT-Yp-A4W" id="xC4-A7-Ct3"/>
                         <outlet property="profileName" destination="KqW-Mg-ddj" id="cMh-1v-RDg"/>
                         <outlet property="showDataBtn" destination="ail-th-TK1" id="BIN-lo-AKF"/>
+                        <outlet property="sliderFont" destination="A8a-J0-oz4" id="W9h-WX-WTT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

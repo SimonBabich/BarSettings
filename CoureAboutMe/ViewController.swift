@@ -13,7 +13,6 @@ struct ProfileData {
     let aboutMe: String = """
                             я рабаотаю начальником отдела развития и поддержики финансовых систем в РТ Лабс с 2015 года. Если есть вопросы по TS или RM2, обращайтесь.
                             В свободное время люблю заниматься кайтбординогом.
-                            В этом упражнении пытался от значения слайдера изменить шрифт, но не получилось. Хотелось бы понять, что не так.
                             При повернутом телефоне не весь тектс умещается: прокуртку нужно настраивать отдельно?
                             Так же интересно как работают таблицы, но надеюсь мы это рассмотрим в следущих уроках.
                             """
@@ -37,7 +36,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         clearBtn.isHidden = true
-        //sliderFont.isHidden = true
+        configureSliderFont()
+     
+        sliderFont.isHidden = true
     }
     
     /// отобразить данные
@@ -50,8 +51,20 @@ class ViewController: UIViewController {
         showDataBtn.isHidden = true
         //sliderFont.value = 18
         
-        //sliderFont.isHidden = false
+        sliderFont.isHidden = false
     }
+    
+    func configureSliderFont() {
+        sliderFont.minimumValue = 0.1
+        sliderFont.maximumValue = 0.4
+        sliderFont.value = 0.18
+        sliderFont.isContinuous = true
+
+//        sliderFont.addTarget(self,
+//                             action: #selector(sliderValueDidChange(_:)),
+//                                //#selector(sliderValueDidChange(_:)),
+//                             for: .valueChanged)
+            }
     
     /// Очистить данные
     @IBAction func clearDataBtn() {
@@ -60,17 +73,25 @@ class ViewController: UIViewController {
         aboutMeLabel.text = nil
         showDataBtn.isHidden = false
         clearBtn.isHidden = true
-        //sliderFont.isHidden = true
+        sliderFont.isHidden = true
     }
     
     /// изменение шрифта
-    @IBAction func slidwrFontCgange(sender: UISlider) {
-        let senderValue = CGFloat(sender.value)
-            
-            
-        //aboutMeLabel.font = UIFont(name: (aboutMeLabel.font.fontName), size:senderValue * 1)
+    @IBAction func sliderFontCgange(sender: UISlider) {
+        let senderValue = sender.value
+
+
+        aboutMeLabel.font = UIFont(name: (aboutMeLabel.font.fontName), size:CGFloat(senderValue * 100))
         //aboutMeLabel.sizeToFit()
         print(senderValue)
     }
+    
+    // MARK: - Actions
+
+//    @objc
+//    func sliderValueDidChange(_ slider: Float) {
+//        //_ slider: UISlider) {
+//        print("A slider changed its value: \(slider).")
+//    }
 }
 
