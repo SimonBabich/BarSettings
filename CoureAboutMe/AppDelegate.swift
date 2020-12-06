@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UITabBar.appearance().unselectedItemTintColor = .yellow
+//        configureSliderFont()
         return true
     }
 
@@ -32,5 +34,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+//    func configureSliderFont() {
+//        //sliderFont.isHidden = false
+//        sliderFont.minimumValue = 0.1
+//        sliderFont.maximumValue = 0.4
+//        sliderFont.value = 0.18
+//        sliderFont.minimumTrackTintColor = UIColor.systemBlue
+//        sliderFont.maximumTrackTintColor = UIColor.systemPurple
+//
+//
+//        sliderFont.isContinuous = true
+//
+////        sliderFont.addTarget(self,
+////                             action: #selector(sliderValueDidChange(_:)),
+////                                //#selector(sliderValueDidChange(_:)),
+////                             for: .valueChanged)
+//            }
+    
 }
 
