@@ -10,12 +10,19 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+//    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        let vc = ViewController()
+//        let navController = UINavigationController(rootViewController: vc)
+//
+//        self.window?.rootViewController = navController
+//        self.window?.backgroundColor = UIColor.white
+//        self.window?.makeKeyAndVisible()
+        
         UITabBar.appearance().unselectedItemTintColor = .yellow
-//        configureSliderFont()
         return true
     }
 
@@ -32,24 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
-//    func configureSliderFont() {
-//        //sliderFont.isHidden = false
-//        sliderFont.minimumValue = 0.1
-//        sliderFont.maximumValue = 0.4
-//        sliderFont.value = 0.18
-//        sliderFont.minimumTrackTintColor = UIColor.systemBlue
-//        sliderFont.maximumTrackTintColor = UIColor.systemPurple
-//
-//
-//        sliderFont.isContinuous = true
-//
-////        sliderFont.addTarget(self,
-////                             action: #selector(sliderValueDidChange(_:)),
-////                                //#selector(sliderValueDidChange(_:)),
-////                             for: .valueChanged)
-//            }
     
 }
 
