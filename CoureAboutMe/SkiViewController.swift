@@ -18,6 +18,14 @@ class SkiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        print("3")
+        
+//        tabBarItem.badgeValue = "3"
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.tabBarItem.badgeValue = nil
+//            self.tabBarController?.selectedIndex = 3
+//        }
+        
         /// принт при первой загрузке ViewController
         print(fileName, #function)
     }

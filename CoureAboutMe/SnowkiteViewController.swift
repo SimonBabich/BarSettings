@@ -35,6 +35,15 @@ class SnowkiteViewController: UIViewController {
         //sliderFont.isHidden = false
         //title = "test"
         
+        print("1")
+        
+        tabBarItem.badgeValue = "1"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.tabBarItem.badgeValue = nil
+            self.tabBarController?.selectedIndex = 1
+        }
+        
+        
         /// принт при первой загрузке ViewController
         print(fileName, #function)
     }
@@ -43,6 +52,9 @@ class SnowkiteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(fileName, #function)
+        
+        // Bзменяем размеп шрифта если поменяли в настройках
+        snowTxtView.font = UIFont(name: (snowTxtView.font.fontName), size: fontSize)
     }
     
     /// Вызывается каждый раз когда экран уже отобразился
@@ -63,6 +75,18 @@ class SnowkiteViewController: UIViewController {
         print(fileName, #function)
     }
     
+    /// вызывается перед началом подсчета Layout
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print(fileName, #function)
+    }
+    
+    /// вызывается когда подсчитан Layout
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(fileName, #function)
+    }
+    
     /// отобразить данные
     func showDataRun() {
         let data = ProfileData()
@@ -70,11 +94,7 @@ class SnowkiteViewController: UIViewController {
         imageView.image = data.foto
         snowTxtView.text = data.aboutMe
         
-        snowTxtView.font = UIFont(name: (snowTxtView.font.fontName), size: fontSize)
-        
-//        aboutMeLabel.frame
-//        aboutMeLabel.bounds
-        //sliderFont.isHidden = false
+        //snowTxtView.font = UIFont(name: (snowTxtView.font.fontName), size: fontSize)
     }
     
     @IBOutlet var viewOutletCollection: [UIImageView]!

@@ -14,16 +14,31 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var flashLight: UIButton!
     /// размер шрифта
     @IBOutlet weak var sliderFont: UISlider!
+    /// код таблиы
+    @IBOutlet weak var tableIDs: UISegmentedControl!
     
     let fileName = "SettingsViewController"
+    var tblName = "Таблица 0"
+    
     
     /// Вызывается при загрузке ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("4")
+        
+        //tabBarItem.badgeValue = "4"
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 16) {
+        //    self.tabBarItem.badgeValue = nil
+        //    //self.tabBarController?.selectedIndex = 0
+        //}
+        
+        title = "Настройки"
+        
         // Do any additional setup after loading the view.
         flashLight.layer.cornerRadius = 20
         configureSliderFont()
+     
         
         /// принт при первой загрузке ViewController
         print(fileName, #function)
@@ -80,6 +95,8 @@ class SettingsViewController: UIViewController {
 //                                     //#selector(sliderValueDidChange(_:)),
 //                                  for: .valueChanged)
     }
+
+    // MARK: - Actions
     
     /// изменение шрифта
     @IBAction func sliderFontChange(sender: UISlider) {
@@ -88,11 +105,9 @@ class SettingsViewController: UIViewController {
         fontSize = CGFloat(senderValue * 100)
       //snowTxtView.font = UIFont(name: (SnowkiteViewController.snowTxtView.font.fontName), size:CGFloat(senderValue * 100))
         //aboutMeLabel.sizeToFit()
-        print(fontSize)
+        print("Изменение слайдера: Шрифт = ", fontSize)
     }
     
-    // MARK: - Actions
-
 //    @objc
 //    func sliderValueDidChange(_ slider: Float) {
 //        //_ slider: UISlider) {
@@ -100,6 +115,14 @@ class SettingsViewController: UIViewController {
 //    }
     
 
+    // нажатие на кнопку Перейти к таблице
+    @IBAction func pressedGoToTable(_ sender: Any) {
+        print("5 нажатие на кнопку Перейти к таблице")
+        print(fileName, #function)
+        //print(tableIDs.select(Any?.self))
+    }
+    
+    
     @IBAction func flashLightPress(sender: UIButton) {
         print("Button was pressed")
         
@@ -137,4 +160,23 @@ class SettingsViewController: UIViewController {
             flashLight.tintColor = !isOn ? .white : .black
         }
 
+    // Изменение таблицы
+    @IBAction func tableChange(_ sender: UISegmentedControl) {
+        // print("Выбрана таблица",sender.selectedSegmentIndex + 1)
+        tblName = "Таблица \(sender.selectedSegmentIndex + 1)"
+        print(tblName)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        let newVC = segue.destination
+        // Если перешли обратно с экрана Таблиц
+        if let tableVC = newVC as? TableViewController {
+            print("4.5")
+            tableVC.title = tblName
+            print(fileName, #function)
+        }
+    }
+    
 }
