@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kyx-mi-fnT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kyx-mi-fnT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,60 +11,114 @@
         <!--Ski-->
         <scene sceneID="meG-wW-iZt">
             <objects>
-                <viewController id="PeL-kL-eJ0" sceneMemberID="viewController">
+                <viewController id="PeL-kL-eJ0" customClass="SkiViewController" customModule="CoureAboutMe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ThA-uG-TAa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CC9-Zq-SSN">
+                                <rect key="frame" x="7" y="204" width="586" height="192"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ua-LM-KPm">
+                                        <rect key="frame" x="93" y="-104" width="400" height="400"/>
+                                        <connections>
+                                            <action selector="flipOver:" destination="PeL-kL-eJ0" eventType="touchUpInside" id="Jo9-qr-Js1"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snow1" translatesAutoresizingMaskIntoConstraints="NO" id="1hP-3j-rmz">
+                                        <rect key="frame" x="93" y="-104" width="400" height="400"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snow2" translatesAutoresizingMaskIntoConstraints="NO" id="k9j-mo-Zz0">
+                                        <rect key="frame" x="93" y="-104" width="400" height="400"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="k9j-mo-Zz0" firstAttribute="centerX" secondItem="CC9-Zq-SSN" secondAttribute="centerX" id="67L-dh-TtX"/>
+                                    <constraint firstItem="5ua-LM-KPm" firstAttribute="top" secondItem="1hP-3j-rmz" secondAttribute="top" id="8Oi-IN-8bk"/>
+                                    <constraint firstItem="1hP-3j-rmz" firstAttribute="leading" secondItem="5ua-LM-KPm" secondAttribute="leading" id="HCb-NU-tCQ"/>
+                                    <constraint firstItem="k9j-mo-Zz0" firstAttribute="centerY" secondItem="CC9-Zq-SSN" secondAttribute="centerY" id="OeU-KZ-1bA"/>
+                                    <constraint firstItem="5ua-LM-KPm" firstAttribute="centerY" secondItem="CC9-Zq-SSN" secondAttribute="centerY" id="ezb-xd-WxV"/>
+                                    <constraint firstItem="5ua-LM-KPm" firstAttribute="centerX" secondItem="CC9-Zq-SSN" secondAttribute="centerX" id="hza-Su-0wc"/>
+                                    <constraint firstItem="1hP-3j-rmz" firstAttribute="centerX" secondItem="CC9-Zq-SSN" secondAttribute="centerX" id="p99-ff-bPI"/>
+                                    <constraint firstItem="1hP-3j-rmz" firstAttribute="centerY" secondItem="CC9-Zq-SSN" secondAttribute="centerY" id="uOH-uj-Z7Z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7op-B6-YIf"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="CC9-Zq-SSN" firstAttribute="leading" secondItem="7op-B6-YIf" secondAttribute="leading" constant="7" id="8vI-ed-c1Q"/>
+                            <constraint firstItem="CC9-Zq-SSN" firstAttribute="centerX" secondItem="ThA-uG-TAa" secondAttribute="centerX" id="L61-eC-aI8"/>
+                            <constraint firstItem="CC9-Zq-SSN" firstAttribute="centerY" secondItem="ThA-uG-TAa" secondAttribute="centerY" id="j63-zR-rL3"/>
+                            <constraint firstItem="CC9-Zq-SSN" firstAttribute="top" secondItem="7op-B6-YIf" secondAttribute="top" constant="204" id="rz2-3S-hRW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ski" image="skiing" id="if0-JE-4bz"/>
+                    <navigationItem key="navigationItem" id="FLz-Jh-b8v"/>
+                    <connections>
+                        <outlet property="snow01" destination="1hP-3j-rmz" id="ssM-ee-ifZ"/>
+                        <outlet property="snow02" destination="k9j-mo-Zz0" id="ab8-vQ-JSq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gd-v9-WPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Y32-UL-T97" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-252" y="589"/>
+            <point key="canvasLocation" x="-252.17391304347828" y="588.61607142857144"/>
         </scene>
-        <!--Wakeboarding-->
-        <scene sceneID="JU9-Du-iSy">
+        <!--Waikboard-->
+        <scene sceneID="iEc-PW-JrP">
             <objects>
-                <viewController id="Fwk-vU-O4i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wakeboarding" image="snowboarding" id="4YL-OZ-Vul"/>
-                    <navigationItem key="navigationItem" id="t9X-Oh-ACf"/>
+                <viewController id="KvR-bl-qby" customClass="WakeboardViewController" customModule="CoureAboutMe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O7e-LQ-Skf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4ti-tD-naw"/>
+                        <color key="backgroundColor" red="0.4603295077589426" green="0.7191336883904037" blue="0.81509776951111468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Waikboard" image="snowboarding" id="EaY-Ee-aKT"/>
+                    <navigationItem key="navigationItem" id="3ni-Vz-3Yb"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="96r-St-pz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jH7-dY-60b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarItem title="Wakeboarding" image="snowboarding" id="d2l-60-UnF"/>
             </objects>
             <point key="canvasLocation" x="-1049" y="589"/>
         </scene>
         <!--Settings-->
         <scene sceneID="piG-yb-vJK">
             <objects>
-                <viewController id="ejR-AA-TXd" sceneMemberID="viewController">
+                <viewController id="ejR-AA-TXd" customClass="SettingsViewController" customModule="CoureAboutMe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CpN-0H-7MY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nJg-6h-VZX" userLabel="sliderFont">
-                                <rect key="frame" x="18" y="64" width="378" height="31"/>
+                                <rect key="frame" x="18" y="20" width="564" height="31"/>
                                 <connections>
-                                    <action selector="sliderFont33" destination="Y32-UL-T97" eventType="valueChanged" id="Rkd-bh-Qmi"/>
+                                    <action selector="sliderFontChange:" destination="IPf-R3-hg7" eventType="valueChanged" id="hrS-Bc-iCA"/>
+                                    <action selector="sliderFontChangeWithSender:" destination="ejR-AA-TXd" eventType="valueChanged" id="vdX-Vl-rrq"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DO-bD-IwW">
-                                <rect key="frame" x="20" y="102" width="590" height="192"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">если добавляю во viewDidLoad
- configureSliderFont(), то выдается  ошибка
-Что не так? Видимо Слайдер еще не виден,
-но как его сконфигурировать в этом случае?</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="GG7-OS-Bm7" userLabel="flashLight">
+                                <rect key="frame" x="520" y="457" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" systemColor="systemIndigoColor"/>
+                                    <imageReference key="image" image="flashlight.on.fill" catalog="system" renderingMode="template"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42"/>
+                                </state>
+                                <connections>
+                                    <action selector="flashLightPressWithSender:" destination="ejR-AA-TXd" eventType="touchUpInside" id="Alb-Va-sGb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LGb-zu-lUm"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="LGb-zu-lUm" firstAttribute="trailing" secondItem="GG7-OS-Bm7" secondAttribute="trailing" constant="20" id="7pT-R4-TmL"/>
+                            <constraint firstItem="GG7-OS-Bm7" firstAttribute="bottom" secondItem="LGb-zu-lUm" secondAttribute="bottom" id="HHI-xZ-9OM"/>
                             <constraint firstItem="nJg-6h-VZX" firstAttribute="top" secondItem="LGb-zu-lUm" secondAttribute="top" constant="20" id="lAn-Cf-8v3"/>
                             <constraint firstItem="nJg-6h-VZX" firstAttribute="leading" secondItem="LGb-zu-lUm" secondAttribute="leading" constant="20" id="noZ-cm-Wyo"/>
                             <constraint firstItem="nJg-6h-VZX" firstAttribute="centerX" secondItem="CpN-0H-7MY" secondAttribute="centerX" id="oUU-QS-PON"/>
@@ -72,8 +126,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="4zR-GU-kKa"/>
+                    <connections>
+                        <outlet property="flashLight" destination="GG7-OS-Bm7" id="DMB-5P-1p8"/>
+                        <outlet property="sliderFont" destination="nJg-6h-VZX" id="Vl3-rw-U2i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXU-RO-ls3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="IPf-R3-hg7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="431.8840579710145" y="-183.48214285714286"/>
         </scene>
@@ -84,15 +143,15 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="aiZ-my-JXX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <color key="tintColor" systemColor="labelColor"/>
-                        <color key="barTintColor" systemColor="systemGray5Color"/>
+                        <color key="barTintColor" systemColor="linkColor"/>
                         <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="z55-uX-kev"/>
+                        <segue destination="KvR-bl-qby" kind="relationship" relationship="viewControllers" id="jS2-KV-3Dc"/>
                         <segue destination="PeL-kL-eJ0" kind="relationship" relationship="viewControllers" id="FFq-ks-lIo"/>
-                        <segue destination="Fwk-vU-O4i" kind="relationship" relationship="viewControllers" id="vwY-Pr-Be0"/>
                         <segue destination="ejR-AA-TXd" kind="relationship" relationship="viewControllers" destinationCreationSelector="settingsOpen:" id="Dvf-yV-adt"/>
                     </connections>
                 </tabBarController>
@@ -103,27 +162,27 @@
         <!--Snowkiting-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoureAboutMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="BYZ-38-t0r" customClass="SnowkiteViewController" customModule="CoureAboutMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="snowView" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqW-Mg-ddj" userLabel="ProfileName">
-                                <rect key="frame" x="1" y="1" width="412" height="82"/>
+                                <rect key="frame" x="1" y="1" width="598" height="38"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaL-OD-N9v">
-                                <rect key="frame" x="10" y="93" width="394" height="792"/>
+                                <rect key="frame" x="10" y="49" width="580" height="574"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sYT-Yp-A4W">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="345"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sYT-Yp-A4W">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="574"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="345" id="REL-Sp-aYg"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="snow" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1jl-eJ-aJi" userLabel="snowTextView">
-                                        <rect key="frame" x="0.0" y="345" width="394" height="447"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="snowTxt" text="snow" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1jl-eJ-aJi" userLabel="snowTextView">
+                                        <rect key="frame" x="394" y="0.0" width="186" height="574"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -154,6 +213,7 @@
                         <outlet property="imageView" destination="sYT-Yp-A4W" id="xC4-A7-Ct3"/>
                         <outlet property="profileName" destination="KqW-Mg-ddj" id="cMh-1v-RDg"/>
                         <outlet property="snowTxtView" destination="1jl-eJ-aJi" id="yIh-Vq-jA9"/>
+                        <outletCollection property="viewOutletCollection" destination="sYT-Yp-A4W" collectionClass="NSMutableArray" id="5r4-yK-N0s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -162,21 +222,33 @@
         </scene>
     </scenes>
     <resources>
+        <image name="flashlight.on.fill" catalog="system" width="76" height="128"/>
         <image name="kitesurfing" width="33.333332061767578" height="33.333332061767578"/>
         <image name="settings" width="20" height="20"/>
         <image name="skiing" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="snow1" width="400" height="400"/>
+        <image name="snow2" width="400" height="400"/>
         <image name="snowboarding" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
