@@ -37,11 +37,11 @@ class SnowkiteViewController: UIViewController {
         
         print("1")
         
-        tabBarItem.badgeValue = "1"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.tabBarItem.badgeValue = nil
-            self.tabBarController?.selectedIndex = 1
-        }
+//        tabBarItem.badgeValue = "1"
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        //            self.tabBarItem.badgeValue = nil
+        //            self.tabBarController?.selectedIndex = 1
+        //        }
         
         
         /// принт при первой загрузке ViewController

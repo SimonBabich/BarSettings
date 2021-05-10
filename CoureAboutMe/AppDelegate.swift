@@ -6,9 +6,24 @@
 //
 
 import UIKit
+import WatchConnectivity
+
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate//, WCSessionDelegate
+{
+//    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+//        <#code#>
+//    }
+//
+//    func sessionDidBecomeInactive(_ session: WCSession) {
+//        <#code#>
+//    }
+//
+//    func sessionDidDeactivate(_ session: WCSession) {
+//        <#code#>
+    //}
+    
 
 //    var window: UIWindow?
 
@@ -21,6 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.window?.rootViewController = navController
 //        self.window?.backgroundColor = UIColor.white
 //        self.window?.makeKeyAndVisible()
+        
+//        if WCSession.isSupported() {
+//            let session = WCSession.defaultSession()
+//            session.delegate = self
+//            session.activateSession()
+//
+//        }
+        
         
         UITabBar.appearance().unselectedItemTintColor = .yellow
         return true
@@ -39,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+//    private func session(session: WCSession, didReciveMessage message: [String: AnyObject]){
+//        UNUserNotificationCenter.def .postNotificationName(NSNotificationC.Name(rawValue: "receivedWatchMessage"),object: self,UserInfo: message)
+//    }
     
 }
 

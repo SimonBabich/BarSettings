@@ -24,13 +24,13 @@ class WakeboardViewController: UIViewController {
         
         self.imageScrollView.set(image: image)
         
-        print("2")
+        print("2")	
         
-        tabBarItem.badgeValue = "2"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.tabBarItem.badgeValue = nil
-            //self.tabBarController?.selectedIndex = 2
-        }
+//        tabBarItem.badgeValue = "2"
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.tabBarItem.badgeValue = nil
+//            //self.tabBarController?.selectedIndex = 2
+//        }
         
         /// принт при первой загрузке ViewController
         print(fileName, #function)

@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tableIDs: UISegmentedControl!
     
     let fileName = "SettingsViewController"
-    var tblName = "Таблица 0"
+    var tblName = "Таблица 2"
     
     
     /// Вызывается при загрузке ViewController

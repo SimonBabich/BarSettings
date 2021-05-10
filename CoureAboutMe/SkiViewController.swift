@@ -12,6 +12,8 @@ class SkiViewController: UIViewController {
     @IBOutlet weak var snow02: UIImageView!
     @IBOutlet weak var snow01: UIImageView!
     var isFliped = false
+    var skiBadgeValue = 0
+    var multiplierSki = 1
     let fileName = "SkiViewController"
     
     /// Вызывается при загрузке ViewController
@@ -19,6 +21,8 @@ class SkiViewController: UIViewController {
         super.viewDidLoad()
       
         print("3")
+        
+        title = "Switch"
         
 //        tabBarItem.badgeValue = "3"
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -57,6 +61,7 @@ class SkiViewController: UIViewController {
 
     @IBAction func flipOver(_ sender: UIButton) {
         isFliped = !isFliped
+        
         let fromView = isFliped ? snow02 : snow01
         let toView = isFliped ? snow01 : snow02
         
@@ -66,6 +71,30 @@ class SkiViewController: UIViewController {
                             //.transitionFlipFromTop
                             , .showHideTransitionViews
         ])
+        
+        skiBadgeValue += 1 * multiplierSki
+//        if (self.navigationItem.rightBarButtonItem?.index(ofAccessibilityElement: plus)   ?.index(ofAccessibilityElement: 0)) == 1 {
+//            skiBadgeValue += 1
+//
+//        } else
+//        {
+//            skiBadgeValue -= 1
+//        }
+            
+        //self.tabBarController?.selectedIndex = 2
+        print(skiBadgeValue)
+        //self.tabBarController?.tabBarController?.tabBarItem.badgeValue = "\(skiBadgeValue)"
+        
+        //let current = self.tabBarController?.selectedIndex
+        //self.tabBarController?.selectedIndex = 2
+        
+        if skiBadgeValue > 0 {
+            self.navigationController?.tabBarItem.badgeValue = "\(skiBadgeValue)"
+        } else {
+            self.navigationController?.tabBarItem.badgeValue = nil
+            skiBadgeValue = 0
+        }
+        //self.tabBarController?.selectedIndex = current!
     }
     /*
     // MARK: - Navigation
@@ -77,4 +106,15 @@ class SkiViewController: UIViewController {
     }
     */
 
+    
+    
+    @IBAction func plusMinusChange(_ sender: Any) {
+        multiplierSki = -1 * multiplierSki
+        print(multiplierSki)
+    }
+    
+    
 }
+	
+ 
+ 
