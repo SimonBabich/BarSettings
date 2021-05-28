@@ -11,27 +11,28 @@ import WatchConnectivity
 let fileNameAD = "AppDelegate.swift"
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate//, WCSessionDelegate
+class AppDelegate: UIResponder, UIApplicationDelegate
 {
 //    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-//        <#code#>
+//        let session = WCSession.defaultSession()
+//        session.delegate = self
+//        session.activateSession()
 //    }
 //
 //    func sessionDidBecomeInactive(_ session: WCSession) {
-//        <#code#>
+//       <#code#>
 //    }
 //
 //    func sessionDidDeactivate(_ session: WCSession) {
 //        <#code#>
-    //}
-    
+//    }
+    	
+    //var window: UIWindow?
 
-//    var window: UIWindow?
-
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
 //        let vc = ViewController()
@@ -45,8 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate//, WCSessionDelegate
 //            let session = WCSession.defaultSession()
 //            session.delegate = self
 //            session.activateSession()
-//
 //        }
+        
+        
         print("01")
         print(fileNameAD, #function)
         

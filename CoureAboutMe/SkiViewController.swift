@@ -13,8 +13,11 @@ class SkiViewController: UIViewController {
     @IBOutlet weak var snow01: UIImageView!
     var isFliped = false
     var skiBadgeValue = 0
-    var multiplierSki = 1
+    //var multiplierSki = 1
     let fileName = "SkiViewController"
+    
+    /// Сегмент
+    private let segment: UISegmentedControl = UISegmentedControl()
     
     /// Вызывается при загрузке ViewController
     override func viewDidLoad() {
@@ -32,6 +35,9 @@ class SkiViewController: UIViewController {
         
         /// принт при первой загрузке ViewController
         print(fileName, #function)
+        
+        // Вызываем метод, который конфигурирует сегмент
+        setSegment()
     }
     
     /// Вызывается каждый раз перед отображением экрана
@@ -58,6 +64,19 @@ class SkiViewController: UIViewController {
         print(fileName, #function)
     }
     
+    /// Конфигурируем сегмент
+    private func setSegment() {
+        // Наш контейнер типа UIBarButtonItem, в который при инициализации кидаем наш сегмент
+        let customBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: segment)
+        // Кладём контейнер в правую часть шапки экрана
+        navigationItem.setRightBarButton(customBarButtonItem, animated: false)
+        //segment.insertSegment(withTitle: "+", at: 0,animated: true)
+        //segment.insertSegment(withTitle: "-", at: 1,animated: true)
+        segment.insertSegment(with: UIImage(systemName: "minus"), at: 0,animated: true)
+        segment.insertSegment(with: UIImage(systemName: "plus"), at: 1,animated: true)
+        segment.selectedSegmentIndex = 0
+
+    }
 
     @IBAction func flipOver(_ sender: UIButton) {
         isFliped = !isFliped
@@ -72,7 +91,12 @@ class SkiViewController: UIViewController {
                             , .showHideTransitionViews
         ])
         
-        skiBadgeValue += 1 * multiplierSki
+        if segment.selectedSegmentIndex == 0 {
+            skiBadgeValue -= 1
+        }
+        else {
+            skiBadgeValue += 1 //* multiplierSki
+        }
 //        if (self.navigationItem.rightBarButtonItem?.index(ofAccessibilityElement: plus)   ?.index(ofAccessibilityElement: 0)) == 1 {
 //            skiBadgeValue += 1
 //
@@ -83,6 +107,7 @@ class SkiViewController: UIViewController {
             
         //self.tabBarController?.selectedIndex = 2
         print(skiBadgeValue)
+        print(segment.selectedSegmentIndex)
         //self.tabBarController?.tabBarController?.tabBarItem.badgeValue = "\(skiBadgeValue)"
         
         //let current = self.tabBarController?.selectedIndex
@@ -108,10 +133,10 @@ class SkiViewController: UIViewController {
 
     
     
-    @IBAction func plusMinusChange(_ sender: Any) {
-        multiplierSki = -1 * multiplierSki
-        print(multiplierSki)
-    }
+//    @IBAction func plusMinusChange(_ sender: Any) {
+//        multiplierSki = -1 * multiplierSki
+//        print(multiplierSki)
+//    }
     
     
 }

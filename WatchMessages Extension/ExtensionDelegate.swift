@@ -5,9 +5,17 @@
 //  Created by SimonBabich on 04.04.2021.
 //
 
-import WatchKit
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+import WatchKit
+import WatchConnectivity
+
+class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        let session = WCSession.default
+        session.delegate = self
+        //session.activateSession()
+    }
+    
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
@@ -54,5 +62,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
+    
+//    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+//        NSNotifica
+//    }
+    
 
 }
