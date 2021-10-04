@@ -3,8 +3,9 @@
 //  Created by SimonBabich on 26.09.2021
 //import Foundation
 
+var cities = [("", "")]
 
-var countries = [
+var myCountries = [
  ("Абу-Даби", "ОАЭ 🇦🇪"), //"https://33tura.ru/FLAG/aziya/oae.gif"),
  ("Абуджа", "Нигерия 🇳🇬"), //"https://33tura.ru/FLAG/africa/nigeriya.gif"),
  ("Аддис-Абеба", "Эфиопия 🇪🇹"), //"https://33tura.ru/FLAG/africa/efyopiya.gif"),
@@ -220,3 +221,7 @@ var cities1 = [
  ("Ярен", "Науру 🇳🇷"),
  ("Яунде", "Камерун 🇨🇲")
 ]
+
+
+
+//let cities2 = cities1.sorted {$0.1 < $1.1}

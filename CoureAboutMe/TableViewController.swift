@@ -22,7 +22,7 @@ class TableViewController: UIViewController {
         print(fileName, #function)
         
         if tblIndex == 2 {
-            settingsLabel.text = "Мои столицы: \(countries.count)шт."
+            settingsLabel.text = "Мои столицы: \(myCountries.count)шт."
         } else if tblIndex == 0 {
             settingsLabel.text = "Количестов стран: \(cities1.count)"
         } else {

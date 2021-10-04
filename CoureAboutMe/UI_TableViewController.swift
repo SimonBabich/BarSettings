@@ -9,27 +9,32 @@ import UIKit
 
 class UI_TableViewController: UITableViewController {
 
-    var cities = [("Амстердам", "Нидерланды 🇳🇱")]
+    //var cities = [("Амстердам", "Нидерланды 🇳🇱")]
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
         if tblIndex == 2 {
-            cities = countries
-        //    settingsLabel.text = "Мои столицы: \(countries.count)шт."
+            //Избранное
+            cities = myCountries
+            //settingsLabel.text = "Мои столицы: \(myCountries.count)шт."
+            self.navigationItem.rightBarButtonItem = self.editButtonItem
         } else if tblIndex == 1 {
+            //Столицы
             cities = cities1
+            self.navigationItem.rightBarButtonItem = self.editButtonItem
         } else {
-            //cities = cities1
-            print("index \(tblIndex)")
+            //Страны
+            cities = cities1.sorted {$0.1 < $1.1}
+            //print("index \(tblIndex)")
         }
 
         // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
         //self.title = "Столица / страна"
     }
 
@@ -50,8 +55,14 @@ class UI_TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell01", for: indexPath)
 
         let currentCell = cities[indexPath.row]
-        cell.textLabel?.text = currentCell.0
-        cell.detailTextLabel?.text = currentCell.1
+        
+        if tblIndex == 0 {
+            cell.textLabel?.text = currentCell.1
+            cell.detailTextLabel?.text = currentCell.0
+        } else {
+            cell.textLabel?.text = currentCell.0
+            cell.detailTextLabel?.text = currentCell.1
+        }
         
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor.systemYellow
@@ -88,7 +99,11 @@ class UI_TableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if tblIndex == 0 {
+            return false
+        } else {
+            return true
+        }
     }
     
 
@@ -97,7 +112,23 @@ class UI_TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            cities.remove(at: indexPath.row)
+            let delCity = cities.remove(at: indexPath.row)
+            //cities.remove(at: indexPath.row)
+            
+            
+            if tblIndex == 2 {
+                // Избранное
+                print(delCity)
+            } else if tblIndex == 1 {
+                cities1.remove(at: indexPath.row)
+                myCountries.append(delCity)
+            } else {
+                //cities = cities1
+                print("index \(tblIndex)")
+            }
+            
+            
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
                         
         } else if editingStyle == .insert {
