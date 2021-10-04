@@ -8,6 +8,7 @@
 import UIKit
 
 var fontSize: CGFloat = 18
+public var tblIndex = 1
 var isOn: Bool = false
 
 struct ProfileData {

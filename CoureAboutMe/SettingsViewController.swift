@@ -18,8 +18,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tableIDs: UISegmentedControl!
     
     let fileName = "SettingsViewController"
-    var tblName = "Таблица 2"
-    
+    var tblName = "Столицы"
+    //public var tblIndex = 1
+    //var countrie = [String; String]
     
     /// Вызывается при загрузке ViewController
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class SettingsViewController: UIViewController {
         //}
         
         title = "Настройки"
+        //countrie = cities.sorted(by: { Self.1; Self.0})
         
         // Do any additional setup after loading the view.
         flashLight.layer.cornerRadius = 20
@@ -163,8 +165,12 @@ class SettingsViewController: UIViewController {
     // Изменение таблицы
     @IBAction func tableChange(_ sender: UISegmentedControl) {
         // print("Выбрана таблица",sender.selectedSegmentIndex + 1)
-        tblName = "Таблица \(sender.selectedSegmentIndex + 1)"
+        tblName =  sender.titleForSegment(at: sender.selectedSegmentIndex) ?? "Таблица \(sender.selectedSegmentIndex + 1)"
         print(tblName)
+        tblIndex = sender.selectedSegmentIndex
+        //var coutries2[]
+        //countries2 = cities.sort.1
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -174,9 +180,18 @@ class SettingsViewController: UIViewController {
         // Если перешли обратно с экрана Таблиц
         if let tableVC = newVC as? TableViewController {
             print("4.5")
+            tableVC.title = tblName + " (настройка)"
+            print(fileName, #function)
+            print(5.0, tblIndex)
+            
+        }
+
+        if let tableVC = newVC as? UI_TableViewController {
+            print("4.7 UI_TableViewController")
             tableVC.title = tblName
             print(fileName, #function)
         }
+
     }
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0130946D26736A0700241EFE /* UI_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0130946C26736A0700241EFE /* UI_TableViewController.swift */; };
+		01309475267371A500241EFE /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01309474267371A500241EFE /* Cities.swift */; };
 		014DFF2525700EB80037CE8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014DFF2425700EB80037CE8E /* AppDelegate.swift */; };
 		014DFF2725700EB80037CE8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014DFF2625700EB80037CE8E /* SceneDelegate.swift */; };
 		014DFF2925700EB80037CE8E /* SnowkiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014DFF2825700EB80037CE8E /* SnowkiteViewController.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0130946C26736A0700241EFE /* UI_TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_TableViewController.swift; sourceTree = "<group>"; };
+		01309474267371A500241EFE /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		014DFF2125700EB80037CE8E /* CoureAboutMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoureAboutMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		014DFF2425700EB80037CE8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		014DFF2625700EB80037CE8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,12 +153,14 @@
 				018587A725869E7C0043F648 /* SkiViewController.swift */,
 				01FF08962584CFE8000AE36E /* SettingsViewController.swift */,
 				01E91C6F25FDED3B00EC6D6C /* TableViewController.swift */,
+				0130946C26736A0700241EFE /* UI_TableViewController.swift */,
 				014DFF2A25700EB80037CE8E /* Main.storyboard */,
 				014DFF2F25700EBC0037CE8E /* LaunchScreen.storyboard */,
 				018587B1258F568F0043F648 /* ImageScrollView.swift */,
 				018587AB258F52E70043F648 /* waikboard.JPG */,
 				014DFF2D25700EBC0037CE8E /* Assets.xcassets */,
 				014DFF3225700EBC0037CE8E /* Info.plist */,
+				01309474267371A500241EFE /* Cities.swift */,
 			);
 			path = CoureAboutMe;
 			sourceTree = "<group>";
@@ -324,6 +330,8 @@
 				01E91C7025FDED3B00EC6D6C /* TableViewController.swift in Sources */,
 				014DFF2525700EB80037CE8E /* AppDelegate.swift in Sources */,
 				014DFF2725700EB80037CE8E /* SceneDelegate.swift in Sources */,
+				01309475267371A500241EFE /* Cities.swift in Sources */,
+				0130946D26736A0700241EFE /* UI_TableViewController.swift in Sources */,
 				01FF08972584CFE8000AE36E /* SettingsViewController.swift in Sources */,
 				018587AF258F54240043F648 /* WakeboardViewController.swift in Sources */,
 			);

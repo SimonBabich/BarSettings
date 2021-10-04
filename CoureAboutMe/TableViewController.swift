@@ -10,7 +10,9 @@ import UIKit
 class TableViewController: UIViewController {
 
     let fileName = "TableViewController"
+    //var tblIndex = 1
     
+    @IBOutlet weak var settingsLabel: UILabel!
     /// Вызывается при загрузке ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,14 @@ class TableViewController: UIViewController {
         //title = "Таблица"
         /// принт при первой загрузке ViewController
         print(fileName, #function)
+        
+        if tblIndex == 2 {
+            settingsLabel.text = "Мои столицы: \(countries.count)шт."
+        } else if tblIndex == 0 {
+            settingsLabel.text = "Количестов стран: \(cities1.count)"
+        } else {
+            settingsLabel.text = "Количестов столиц: \(cities1.count)"
+        }
     }
     
     /// Вызывается каждый раз перед отображением экрана
